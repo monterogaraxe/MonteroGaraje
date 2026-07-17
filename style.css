@@ -1,0 +1,38 @@
+style.css
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#111;
+    color:white;
+}
+
+header{
+    background:#181818;
+    padding:20px;
+    text-align:center;
+    font-size:32px;
+    font-weight:bold;
+}
+
+main{
+    text-align:center;
+    padding:60px 20px;
+}
+
+h2{
+    font-size:42px;
+}
+
+p{
+    color:#cccccc;
+    font-size:18px;
+}
+
+button{
+    background:#00b894;
+    color:white;
+    border:none;
+    padding:15px 35px;
+    font-size:18px;
+    border-radius:8px;
+}
