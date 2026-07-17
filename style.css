@@ -1,38 +1,70 @@
 style.css
-body{
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
     font-family:Arial, Helvetica, sans-serif;
-    background:#111;
+    background:#0f172a;
     color:white;
 }
 
 header{
-    background:#181818;
-    padding:20px;
+    background:#111827;
+    padding:25px;
     text-align:center;
     font-size:32px;
     font-weight:bold;
+    border-bottom:2px solid #22c55e;
 }
 
 main{
-    text-align:center;
+    max-width:900px;
+    margin:auto;
     padding:60px 20px;
+    text-align:center;
 }
 
-h2{
+h1{
     font-size:42px;
+    margin-bottom:20px;
 }
 
 p{
-    color:#cccccc;
+    color:#cbd5e1;
+    line-height:1.7;
+    margin-bottom:25px;
+}
+
+input{
+    width:100%;
+    max-width:600px;
+    padding:18px;
+    border-radius:12px;
+    border:none;
     font-size:18px;
+    margin-bottom:20px;
 }
 
 button{
-    background:#00b894;
+    background:#22c55e;
     color:white;
     border:none;
-    padding:15px 35px;
+    padding:16px 40px;
     font-size:18px;
-    border-radius:8px;
+    border-radius:12px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#16a34a;
+}
+
+section{
+    margin-top:70px;
+    background:#1e293b;
+    padding:35px;
+    border-radius:20px;
 }
