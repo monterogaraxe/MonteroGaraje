@@ -68,3 +68,54 @@ section{
     padding:35px;
     border-radius:20px;
 }
+/* Tarjetas */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 15px 0;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+}
+
+/* Títulos de sección */
+.featured h2,
+.tools h2 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+/* Caja del buscador */
+.search-box {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.search-box input {
+  flex: 1;
+  min-width: 220px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.search-box button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #0d6efd;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.search-box button:hover {
+  opacity: 0.9;
+}
