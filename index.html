@@ -1,95 +1,68 @@
-index.html
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MonteroGaraje</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MonteroGaraje</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
-    🚗 MonteroGaraje
+<header class="hero">
+  <h1>🚗 MonteroGaraje</h1>
+  <p>El buscador inteligente de vehículos en Europa</p>
+
+  <div class="search-box">
+    <input
+      type="text"
+      id="busqueda"
+      placeholder="Busca un coche (Golf, RS3, Cupra...)"
+    >
+    <button id="btnBuscar">Buscar en Europa</button>
+  </div>
 </header>
 
 <main>
 
-<h1>La inteligencia detrás de cada compra.</h1>
+  <div id="resultados"></div>
 
-<p>
-Encuentra, compara e importa vehículos con ayuda de inteligencia artificial.
-</p>
+  <section class="featured">
+    <h2>🔥 Vehículos destacados</h2>
 
-<input type="text" placeholder="¿Qué coche estás buscando?">
+    <div class="card">
+      <h3>Audi RS3</h3>
+      <p>Buscar las mejores ofertas en Europa.</p>
+    </div>
 
-<br><br>
+    <div class="card">
+      <h3>Volkswagen Golf GTI</h3>
+      <p>Comparar precios entre distintos países.</p>
+    </div>
 
-<button>Buscar</button>
+    <div class="card">
+      <h3>Cupra Formentor VZ5</h3>
+      <p>Analizar oportunidades de compra.</p>
+    </div>
+  </section>
 
-<section>
+  <section class="tools">
+    <h2>🛠 Próximamente</h2>
 
-<h2>🤖 MonteroAI</h2>
+    <div class="card">
+      <h3>🤖 Atlas IA</h3>
+      <p>Asistente inteligente para encontrar el mejor vehículo.</p>
+    </div>
 
-<p>
-Próximamente podrás describir el coche que buscas y MonteroAI encontrará las mejores opciones para ti.
-</p>
-
-</section>
+    <div class="card">
+      <h3>💰 Calculadora de importación</h3>
+      <p>Estimación de impuestos, transporte y matriculación.</p>
+    </div>
+  </section>
 
 </main>
 
 <script src="app.js"></script>
 
 </body>
-<header class="hero">
-  <h1>MonteroGaraje</h1>
-  <p>El buscador inteligente de vehículos en Europa</p>
-
-<div class="search-box">
-  <input
-    type="text"
-    id="busqueda"
-    placeholder="Busca un coche..."
-  >
-  <button id="btnBuscar">Buscar en Europa</button>
-</div>
-
-<div id="resultados"></div>
-</header>
-
-<main>
-    <section class="featured">
-  <h2>🔥 Vehículos destacados</h2>
-
-  <div class="card">
-    <h3>Audi RS3</h3>
-    <p>Buscar las mejores ofertas en Europa.</p>
-  </div>
-
-  <div class="card">
-    <h3>Volkswagen Golf GTI</h3>
-    <p>Comparar precios entre distintos países.</p>
-  </div>
-
-  <div class="card">
-    <h3>Cupra Formentor VZ5</h3>
-    <p>Analizar oportunidades de compra.</p>
-  </div>
-</section>
-
-<section class="tools">
-  <h2>🛠 Próximamente</h2>
-
-  <div class="card">
-    <h3>🤖 Atlas IA</h3>
-    <p>Asistente inteligente para encontrar el mejor vehículo.</p>
-  </div>
-
-  <div class="card">
-    <h3>💰 Calculadora de importación</h3>
-    <p>Estimación de impuestos, transporte y matriculación.</p>
-  </div>
-</section>
 </html>
