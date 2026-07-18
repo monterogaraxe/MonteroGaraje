@@ -1,68 +1,85 @@
 function buscarCoche() {
 
-    const coche = document.getElementById("busqueda").value.toLowerCase().trim();
+    const texto = document
+        .getElementById("busqueda")
+        .value
+        .toLowerCase()
+        .trim();
 
     const resultado = document.getElementById("resultado");
 
-    if(coche===""){
-        resultado.innerHTML=`
+    if (texto === "") {
+
+        resultado.innerHTML = `
         <div class="card">
-            <h3>⚠ Escribe un vehículo</h3>
+            <h2>⚠ Escribe un vehículo</h2>
+            <p>Introduce una marca, modelo o VIN.</p>
         </div>
         `;
+
         return;
     }
 
-    let ficha="";
+    let cocheEncontrado = null;
 
-    if(coche.includes("focus")){
+    for (let coche of coches) {
 
-        ficha=`
-        <div class="card">
-        <h2>🚗 Ford Focus RS MK2</h2>
-        <p>⭐ Índice Montero: 91/100</p>
-        <p>💶 Precio medio Europa: 36.500 €</p>
-        <p>🌍 País recomendado: Alemania</p>
-        <p>📋 Historial: Disponible próximamente</p>
-        <p>🤖 MonteroAI: Muy buena compra.</p>
-        </div>`;
+        for (let palabra of coche.busqueda) {
+
+            if (texto.includes(palabra)) {
+
+                cocheEncontrado = coche;
+                break;
+
+            }
+
+        }
+
+        if (cocheEncontrado) break;
+
     }
 
-    else if(coche.includes("rs3")){
+    if (!cocheEncontrado) {
 
-        ficha=`
+        resultado.innerHTML = `
         <div class="card">
-        <h2>🚗 Audi RS3</h2>
-        <p>⭐ Índice Montero: 95/100</p>
-        <p>💶 Precio medio Europa: 43.900 €</p>
-        <p>🌍 País recomendado: Alemania</p>
-        <p>📋 Historial: Disponible próximamente</p>
-        <p>🤖 MonteroAI: Excelente compra.</p>
-        </div>`;
+
+            <h2>🔍 ${texto}</h2>
+
+            <p>No hemos encontrado ese vehículo todavía.</p>
+
+            <p>Próximamente MonteroGaraje buscará automáticamente en toda Europa.</p>
+
+        </div>
+        `;
+
+        return;
+
     }
 
-    else if(coche.includes("golf")){
+    resultado.innerHTML = `
 
-        ficha=`
-        <div class="card">
-        <h2>🚗 Volkswagen Golf GTI</h2>
-        <p>⭐ Índice Montero: 89/100</p>
-        <p>💶 Precio medio Europa: Consultando...</p>
-        <p>🌍 Comparando Europa...</p>
-        <p>📋 Historial: Disponible próximamente</p>
-        <p>🤖 MonteroAI: Analizando vehículo.</p>
-        </div>`;
-    }
+    <div class="card">
 
-    else{
+        <img
+            src="${cocheEncontrado.imagen}"
+            alt="${cocheEncontrado.nombre}"
+        >
 
-        ficha=`
-        <div class="card">
-        <h2>🔍 ${coche}</h2>
-        <p>Estamos preparando información para este modelo.</p>
-        </div>`;
-    }
+        <h2>${cocheEncontrado.nombre}</h2>
 
-    resultado.innerHTML=ficha;
+        <p><strong>⭐ Índice Montero:</strong> ${cocheEncontrado.indice}/100</p>
+
+        <p><strong>💶 Precio medio Europa:</strong> ${cocheEncontrado.precio}</p>
+
+        <p><strong>🌍 Mejor país:</strong> ${cocheEncontrado.pais}</p>
+
+        <p><strong>🤖 MonteroAI:</strong></p>
+
+        <p>${cocheEncontrado.ia}</p>
+
+    </div>
+
+    `;
 
 }
