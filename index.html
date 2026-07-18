@@ -3,78 +3,197 @@
 
 <head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>MonteroGaraje</title>
+<title>MonteroGaraje</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<header class="hero">
+<header>
 
-    <h1>🚗 MonteroGaraje</h1>
+<nav class="navbar">
 
-    <p>El buscador inteligente de vehículos en Europa</p>
+<div class="logo">
 
-    <div class="search-box">
+🚗 <span>MonteroGaraje</span>
 
-        <input
-            id="busqueda"
-            type="text"
-            placeholder="Buscar marca, modelo o VIN">
+</div>
 
-        <button onclick="buscarCoche()">
-            🔍 Buscar
-        </button>
+<ul class="menu">
 
-    </div>
+<li><a href="#">Inicio</a></li>
+
+<li><a href="#">Buscar</a></li>
+
+<li><a href="#">Comparador</a></li>
+
+<li><a href="#">Favoritos</a></li>
+
+<li><a href="#">MonteroAI</a></li>
+
+<li><a href="#">Mi Cuenta</a></li>
+
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<h1>El buscador inteligente de vehículos en Europa</h1>
+
+<p>
+
+Busca un coche entre miles de anuncios europeos,
+
+compáralo y descubre si realmente merece la pena.
+
+</p>
+
+<div class="search-box">
+
+<input
+type="text"
+id="busqueda"
+placeholder="Marca, modelo o VIN">
+
+<button onclick="buscarCoche()">
+
+🔍 Buscar
+
+</button>
+
+</div>
+
+</section>
 
 </header>
 
 <main>
 
-<section id="resultado"></section>
+<section id="resultado">
+
+</section>
 
 <section class="featured">
 
-<h2>🔥 Vehículos destacados</h2>
+<h2>🔥 Oportunidades del día</h2>
 
 <div class="grid">
 
 <div class="card">
-<h3>Audi RS3</h3>
-<p>Compacto deportivo de Audi.</p>
-<button onclick="document.getElementById('busqueda').value='Audi RS3';buscarCoche();">
-Analizar
-</button>
-</div>
 
-<div class="card">
 <h3>Ford Focus RS MK2</h3>
-<p>Deportivo con gran potencial.</p>
+
+<p>
+
+Precio inferior a la media europea.
+
+</p>
+
 <button onclick="document.getElementById('busqueda').value='Focus RS MK2';buscarCoche();">
+
 Analizar
+
 </button>
+
 </div>
 
 <div class="card">
+
+<h3>Audi RS3</h3>
+
+<p>
+
+Historial completo y excelente precio.
+
+</p>
+
+<button onclick="document.getElementById('busqueda').value='Audi RS3';buscarCoche();">
+
+Analizar
+
+</button>
+
+</div>
+
+<div class="card">
+
 <h3>Volkswagen Golf GTI MK2</h3>
-<p>Uno de los GTI más buscados.</p>
+
+<p>
+
+Clásico con alto potencial de revalorización.
+
+</p>
+
 <button onclick="document.getElementById('busqueda').value='Golf GTI';buscarCoche();">
+
 Analizar
+
 </button>
+
 </div>
 
 <div class="card">
+
 <h3>Cupra Formentor VZ5</h3>
-<p>Edición limitada.</p>
+
+<p>
+
+Serie limitada con gran demanda.
+
+</p>
+
 <button onclick="document.getElementById('busqueda').value='Formentor';buscarCoche();">
+
 Analizar
+
 </button>
+
+</div>
+
+</div>
+
+</section>
+<section class="featured">
+
+<h2>🌍 Servicios de MonteroGaraje</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>📋 Historial</h3>
+<p>Consulta el historial del vehículo cuando esté disponible.</p>
+</div>
+
+<div class="card">
+<h3>🚛 Transporte</h3>
+<p>Calcularemos el coste aproximado de traer el vehículo.</p>
+</div>
+
+<div class="card">
+<h3>🛡 Seguro</h3>
+<p>Estimación del seguro según el vehículo.</p>
+</div>
+
+<div class="card">
+<h3>💰 Importación</h3>
+<p>Coste total de matriculación e importación.</p>
+</div>
+
+<div class="card">
+<h3>⭐ Índice Montero</h3>
+<p>Valoración inteligente de cada vehículo.</p>
+</div>
+
+<div class="card">
+<h3>🤖 MonteroAI</h3>
+<p>La IA recomendará si el coche merece la pena.</p>
 </div>
 
 </div>
@@ -83,25 +202,24 @@ Analizar
 
 <section class="featured">
 
-<h2>🌍 Próximamente</h2>
+<h2>📈 Próximamente</h2>
 
 <div class="grid">
 
-<div class="card">📷 Fotos reales</div>
+<div class="card">
+<h3>🌍 Comparador Europeo</h3>
+<p>Comparación automática entre distintos portales.</p>
+</div>
 
-<div class="card">📋 Historial del vehículo</div>
+<div class="card">
+<h3>❤️ Favoritos</h3>
+<p>Guarda tus vehículos favoritos.</p>
+</div>
 
-<div class="card">⚠ Accidentes</div>
-
-<div class="card">💶 Comparador europeo</div>
-
-<div class="card">🚛 Transporte</div>
-
-<div class="card">🏛 Gestoría</div>
-
-<div class="card">🛡 Seguro</div>
-
-<div class="card">🤖 MonteroAI</div>
+<div class="card">
+<h3>📉 Radar de oportunidades</h3>
+<p>Detectaremos coches por debajo del precio medio.</p>
+</div>
 
 </div>
 
@@ -109,9 +227,14 @@ Analizar
 
 </main>
 
+<footer>
+
+<p>© 2026 MonteroGaraje · Proyecto Atlas</p>
+
+</footer>
+
 <script src="database.js"></script>
 <script src="app.js"></script>
 
 </body>
-
 </html>
