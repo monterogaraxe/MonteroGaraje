@@ -1,40 +1,50 @@
-README.md
 # 🚗 MonteroGaraje
 
 ## Proyecto Atlas
 
 Bienvenido al repositorio oficial de MonteroGaraje.
 
-### Objetivo
+## Objetivo
 
-Crear la plataforma de inteligencia artificial más avanzada de Europa para la búsqueda, comparación, compra, venta e importación de vehículos.
+Desarrollar la plataforma inteligente de referencia en Europa para buscar, comparar, analizar, comprar e importar vehículos.
 
 ## Funcionalidades previstas
 
-- 🔍 Buscador inteligente con IA
-- 🌍 Comparador de vehículos en Europa
-- ⚖️ Comparación de precios entre portales
-- 💰 Cálculo automático de importación
-- 📈 Estimación de beneficio para compraventas
-- 🧾 Historial del vehículo (cuando esté disponible)
-- 🔨 Identificación de vehículos en subasta
-- 📊 Puntuación Montero
+- 🔍 Buscador inteligente de vehículos
 - 🤖 MonteroAI
+- 🌍 Comparador de precios en Europa
+- 💶 Cálculo del coste total de importación
+- 📋 Historial del vehículo
+- 🛠 Libro de mantenimiento
+- ⚠ Accidentes y cargas administrativas
+- 🛡 Estimación de seguro
+- 🚛 Coste de transporte
+- ❤️ Favoritos
+- ⭐ Índice Montero
+- 📈 Radar de oportunidades
+- 👤 Área de usuario
 
 ## Estado del proyecto
 
-Versión: 0.1 Alpha
+- Versión: 0.1 Alpha
+- Estado: En desarrollo
+- Proyecto: Atlas
+- Sprint actual: 8
 
-Estado: En desarrollo
+## Vehículo de pruebas
 
-Sprint: 1
-
-Vehículo de pruebas:
-Ford Focus RS Mk2
+- Ford Focus RS MK2
 
 ---
 
-Fundador:
-MonteroGaraje
+## Tecnologías
 
-Proyecto Atlas © 2026
+- HTML5
+- CSS3
+- JavaScript
+- GitHub
+- GitHub Pages
+
+---
+
+© 2026 MonteroGaraje - Proyecto Atlas
