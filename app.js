@@ -1,50 +1,68 @@
 function buscarCoche() {
 
-    const coche = document.getElementById("busqueda").value.trim();
+    const coche = document.getElementById("busqueda").value.toLowerCase().trim();
+
     const resultado = document.getElementById("resultado");
 
-    if (coche === "") {
-
-        resultado.innerHTML = `
+    if(coche===""){
+        resultado.innerHTML=`
         <div class="card">
-            <h3>⚠ Atención</h3>
-            <p>Escribe una marca, modelo, enlace o VIN.</p>
+            <h3>⚠ Escribe un vehículo</h3>
         </div>
         `;
-
         return;
     }
 
-    resultado.innerHTML = `
-    <div class="card">
+    let ficha="";
 
-        <h2>🚗 ${coche}</h2>
+    if(coche.includes("focus")){
 
-        <hr style="margin:15px 0;border:1px solid #334155;">
+        ficha=`
+        <div class="card">
+        <h2>🚗 Ford Focus RS MK2</h2>
+        <p>⭐ Índice Montero: 91/100</p>
+        <p>💶 Precio medio Europa: 36.500 €</p>
+        <p>🌍 País recomendado: Alemania</p>
+        <p>📋 Historial: Disponible próximamente</p>
+        <p>🤖 MonteroAI: Muy buena compra.</p>
+        </div>`;
+    }
 
-        <p><strong>⭐ Índice Montero:</strong> 87 / 100</p>
+    else if(coche.includes("rs3")){
 
-        <p><strong>💶 Precio de mercado:</strong> Calculando...</p>
+        ficha=`
+        <div class="card">
+        <h2>🚗 Audi RS3</h2>
+        <p>⭐ Índice Montero: 95/100</p>
+        <p>💶 Precio medio Europa: 43.900 €</p>
+        <p>🌍 País recomendado: Alemania</p>
+        <p>📋 Historial: Disponible próximamente</p>
+        <p>🤖 MonteroAI: Excelente compra.</p>
+        </div>`;
+    }
 
-        <p><strong>📋 Historial:</strong> Próximamente</p>
+    else if(coche.includes("golf")){
 
-        <p><strong>🛠 Libro de mantenimiento:</strong> Próximamente</p>
+        ficha=`
+        <div class="card">
+        <h2>🚗 Volkswagen Golf GTI</h2>
+        <p>⭐ Índice Montero: 89/100</p>
+        <p>💶 Precio medio Europa: Consultando...</p>
+        <p>🌍 Comparando Europa...</p>
+        <p>📋 Historial: Disponible próximamente</p>
+        <p>🤖 MonteroAI: Analizando vehículo.</p>
+        </div>`;
+    }
 
-        <p><strong>⚖ Cargas administrativas:</strong> Próximamente</p>
+    else{
 
-        <p><strong>🚛 Transporte:</strong> Próximamente</p>
+        ficha=`
+        <div class="card">
+        <h2>🔍 ${coche}</h2>
+        <p>Estamos preparando información para este modelo.</p>
+        </div>`;
+    }
 
-        <p><strong>🛡 Seguro estimado:</strong> Próximamente</p>
-
-        <p><strong>🤖 MonteroAI:</strong></p>
-
-        <p>
-        Estamos preparando el análisis inteligente de este vehículo.
-        En futuras versiones aquí aparecerá un informe completo con
-        valoración, riesgos y recomendación de compra.
-        </p>
-
-    </div>
-    `;
+    resultado.innerHTML=ficha;
 
 }
