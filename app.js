@@ -1,40 +1,38 @@
-// MonteroGaraje
-console.log("MonteroGaraje iniciado");
+function buscarCoche() {
 
-const coches = [
-  { marca: "Volkswagen", modelo: "Golf GTI MK2", pais: "España", precio: 18000 },
-  { marca: "Audi", modelo: "RS3", pais: "Alemania", precio: 52000 },
-  { marca: "Cupra", modelo: "Formentor VZ5", pais: "Países Bajos", precio: 47000 }
-];
+    const coche = document.getElementById("busqueda").value;
 
-window.addEventListener("DOMContentLoaded", () => {
-  const inputBusqueda = document.getElementById("busqueda");
-  const botonBuscar = document.getElementById("btnBuscar");
-  const resultados = document.getElementById("resultados");
+    const resultado = document.getElementById("resultado");
 
-  botonBuscar.addEventListener("click", () => {
-    const texto = inputBusqueda.value.toLowerCase().trim();
-
-    const encontrados = coches.filter(coche =>
-      coche.marca.toLowerCase().includes(texto) ||
-      coche.modelo.toLowerCase().includes(texto)
-    );
-
-    resultados.innerHTML = "";
-
-    if (encontrados.length === 0) {
-      resultados.innerHTML = "<p>No se han encontrado vehículos.</p>";
-      return;
+    if(coche===""){
+        resultado.innerHTML="<p style='color:red;'>Escribe un coche.</p>";
+        return;
     }
 
-    encontrados.forEach(coche => {
-      resultados.innerHTML += `
-        <div class="card">
-          <h3>${coche.marca} ${coche.modelo}</h3>
-          <p>País: ${coche.pais}</p>
-          <p>Precio: ${coche.precio.toLocaleString()} €</p>
-        </div>
-      `;
-    });
-  });
-});
+    resultado.innerHTML=`
+    <div style="
+    margin-top:40px;
+    background:#1e293b;
+    padding:25px;
+    border-radius:15px;
+    ">
+
+        <h2>${coche}</h2>
+
+        <p>⭐ Índice Montero: 87/100</p>
+
+        <p>💶 Precio medio: Próximamente</p>
+
+        <p>📋 Historial: Próximamente</p>
+
+        <p>🚛 Transporte: Próximamente</p>
+
+        <p>⚖️ Cargas administrativas: Próximamente</p>
+
+        <p>🛡 Seguro estimado: Próximamente</p>
+
+        <p>🤖 MonteroAI: En desarrollo...</p>
+
+    </div>
+    `;
+}
