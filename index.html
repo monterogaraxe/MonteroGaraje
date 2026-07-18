@@ -2,12 +2,14 @@
 <html lang="es">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>MonteroGaraje</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -16,17 +18,17 @@
 
     <h1>🚗 MonteroGaraje</h1>
 
-    <p>La inteligencia detrás de cada compra</p>
+    <p>El buscador inteligente de vehículos en Europa</p>
 
     <div class="search-box">
 
         <input
             type="text"
             id="busqueda"
-            placeholder="Marca, modelo, enlace o VIN">
+            placeholder="Buscar marca, modelo o VIN">
 
-        <button id="btnBuscar" onclick="buscarCoche()">
-            🔍 Analizar vehículo
+        <button onclick="buscarCoche()">
+            🔍 Buscar
         </button>
 
     </div>
@@ -35,59 +37,91 @@
 
 <main>
 
-    <div id="resultado"></div>
+<section id="resultado"></section>
 
-    <section class="featured">
+<section class="featured">
 
-        <h2>🔥 Vehículos destacados</h2>
+<h2>🔥 Vehículos destacados</h2>
 
-        <div class="card">
-            <h3>Ford Focus RS MK2</h3>
-            <p>Deportivo de colección.</p>
-        </div>
+<div class="grid">
 
-        <div class="card">
-            <h3>Audi RS3</h3>
-            <p>Compacto deportivo de altas prestaciones.</p>
-        </div>
+<div class="card">
+<h3>🚗 Audi RS3</h3>
+<p>Deportivo compacto de altas prestaciones.</p>
+<button onclick="document.getElementById('busqueda').value='Audi RS3';buscarCoche();">
+Analizar
+</button>
+</div>
 
-        <div class="card">
-            <h3>Volkswagen Golf GTI MK2</h3>
-            <p>Uno de los GTI más icónicos.</p>
-        </div>
+<div class="card">
+<h3>🚗 Ford Focus RS MK2</h3>
+<p>Uno de los compactos deportivos más buscados.</p>
+<button onclick="document.getElementById('busqueda').value='Focus RS MK2';buscarCoche();">
+Analizar
+</button>
+</div>
 
-        <div class="card">
-            <h3>Cupra Formentor VZ5</h3>
-            <p>Edición limitada de 390 CV.</p>
-        </div>
+<div class="card">
+<h3>🚗 Volkswagen Golf GTI MK2</h3>
+<p>Un icono entre los GTI clásicos.</p>
+<button onclick="document.getElementById('busqueda').value='Golf GTI MK2';buscarCoche();">
+Analizar
+</button>
+</div>
 
-    </section>
+<div class="card">
+<h3>🚗 Cupra Formentor VZ5</h3>
+<p>Edición limitada de 390 CV.</p>
+<button onclick="document.getElementById('busqueda').value='Formentor VZ5';buscarCoche();">
+Analizar
+</button>
+</div>
 
-    <section class="tools">
+</div>
 
-        <h2>🚀 Próximamente</h2>
+</section>
 
-        <div class="card">
-            <h3>🤖 MonteroAI</h3>
-            <p>Análisis inteligente de compra.</p>
-        </div>
+<section class="featured">
 
-        <div class="card">
-            <h3>📋 Historial completo</h3>
-            <p>Accidentes, mantenimiento y kilometraje.</p>
-        </div>
+<h2>🌍 Próximamente en MonteroGaraje</h2>
 
-        <div class="card">
-            <h3>💶 Coste de importación</h3>
-            <p>Transporte, impuestos, seguro y gestoría.</p>
-        </div>
+<div class="grid">
 
-        <div class="card">
-            <h3>🌍 Comparador europeo</h3>
-            <p>Consulta anuncios de varios países.</p>
-        </div>
+<div class="card">
+📷 Fotos reales
+</div>
 
-    </section>
+<div class="card">
+📋 Historial completo
+</div>
+
+<div class="card">
+⚠ Accidentes
+</div>
+
+<div class="card">
+🛠 Libro de mantenimiento
+</div>
+
+<div class="card">
+🚛 Transporte
+</div>
+
+<div class="card">
+🛡 Seguro
+</div>
+
+<div class="card">
+💰 Coste de importación
+</div>
+
+<div class="card">
+🤖 MonteroAI
+</div>
+
+</div>
+
+</section>
 
 </main>
 
