@@ -12,71 +12,66 @@ function buscarCoche() {
 
         resultado.innerHTML = `
         <div class="card">
-            <h2>⚠ Escribe un vehículo</h2>
-            <p>Introduce una marca, modelo o VIN.</p>
+            <h2>⚠ Escribe una marca, modelo o VIN</h2>
         </div>
         `;
 
         return;
     }
 
-    let cocheEncontrado = null;
+    const coche = DATABASE.coches.find(c =>
 
-    for (let coche of coches) {
+        c.busquedas.some(b => texto.includes(b))
 
-        for (let palabra of coche.busqueda) {
+    );
 
-            if (texto.includes(palabra)) {
-
-                cocheEncontrado = coche;
-                break;
-
-            }
-
-        }
-
-        if (cocheEncontrado) break;
-
-    }
-
-    if (!cocheEncontrado) {
+    if (!coche) {
 
         resultado.innerHTML = `
         <div class="card">
-
-            <h2>🔍 ${texto}</h2>
-
-            <p>No hemos encontrado ese vehículo todavía.</p>
-
-            <p>Próximamente MonteroGaraje buscará automáticamente en toda Europa.</p>
-
+            <h2>❌ Vehículo no encontrado</h2>
+            <p>Próximamente MonteroGaraje buscará este coche en toda Europa.</p>
         </div>
         `;
 
         return;
-
     }
 
     resultado.innerHTML = `
 
     <div class="card">
 
-        <img
-            src="${cocheEncontrado.imagen}"
-            alt="${cocheEncontrado.nombre}"
-        >
+        <img src="${coche.imagen}" alt="${coche.modelo}">
 
-        <h2>${cocheEncontrado.nombre}</h2>
+        <h2>${coche.marca} ${coche.modelo}</h2>
 
-        <p><strong>⭐ Índice Montero:</strong> ${cocheEncontrado.indice}/100</p>
+        <p><strong>⭐ Índice Montero:</strong> ${coche.indice}/100</p>
 
-        <p><strong>💶 Precio medio Europa:</strong> ${cocheEncontrado.precio}</p>
+        <p><strong>💶 Precio medio Europa:</strong> ${coche.precioEuropa}</p>
 
-        <p><strong>🌍 Mejor país:</strong> ${cocheEncontrado.pais}</p>
+        <p><strong>🌍 Mejor país:</strong> ${coche.mejorPais}</p>
 
-        <p><strong>🤖 MonteroAI:</strong></p>
+        <p><strong>⛽ Combustible:</strong> ${coche.combustible}</p>
 
-        <p>${cocheEncontrado.ia}</p>
+        <p><strong>⚙ Cambio:</strong> ${coche.cambio}</p>
+
+        <p><strong>🏁 Potencia:</strong> ${coche.potencia}</p>
+
+        <p><strong>🚘 Tracción:</strong> ${coche.traccion}</p>
+
+        <hr>
+
+        <h3>🤖 MonteroAI</h3>
+
+        <p>${coche.ia}</p>
+
+        <hr>
+
+        <button>📷 Ver galería</button>
+
+        <button>📋 Historial</button>
+
+        <button>💶 Comparar en Europa</button>
 
     </div>
 
