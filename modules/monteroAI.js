@@ -1,36 +1,63 @@
 /*
 ========================================
 MONTERO AI
-Proyecto Atlas 2.0
-Motor de Inteligencia Artificial
+VERSIÓN 1.0
 ========================================
 */
 
 const MonteroAI = {
 
-    analizar(datos){
+    analizar(coche){
 
-        return{
+        let informe = {
 
-            indice:0,
+            indice: 0,
 
-            recomendacion:"",
+            nivel: "",
 
-            puntosFuertes:[],
+            recomendacion: "",
 
-            puntosDebiles:[],
-
-            riesgos:[],
-
-            oportunidad:false,
-
-            inversion:false,
-
-            coleccion:false,
-
-            resumen:""
+            color: ""
 
         };
+
+        if(coche.indice >= 95){
+
+            informe.indice = coche.indice;
+            informe.nivel = "Excelente";
+            informe.recomendacion = "Compra muy recomendable.";
+            informe.color = "verde";
+
+        }
+
+        else if(coche.indice >= 90){
+
+            informe.indice = coche.indice;
+            informe.nivel = "Muy buena";
+            informe.recomendacion = "Muy buena oportunidad.";
+            informe.color = "azul";
+
+        }
+
+        else if(coche.indice >= 80){
+
+            informe.indice = coche.indice;
+            informe.nivel = "Buena";
+            informe.recomendacion = "Revisar historial antes de comprar.";
+            informe.color = "amarillo";
+
+        }
+
+        else{
+
+            informe.indice = coche.indice;
+            informe.nivel = "Riesgo";
+            informe.recomendacion = "No recomendable.";
+            informe.color = "rojo";
+
+        }
+
+        return informe;
 
     }
 
