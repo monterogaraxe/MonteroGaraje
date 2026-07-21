@@ -1,80 +1,72 @@
-function buscarCoche() {
+/*
+========================================
+MONTEROGARAJE
+APP PRINCIPAL
+Proyecto Atlas
+========================================
+*/
+
+function buscarCoche(){
 
     const texto = document
         .getElementById("busqueda")
-        .value
-        .toLowerCase()
-        .trim();
+        .value;
 
-    const resultado = document.getElementById("resultado");
+    const resultado = document
+        .getElementById("resultado");
 
-    if (texto === "") {
+    const coches = Buscador.buscar(texto);
 
-        resultado.innerHTML = `
+    if(coches.length===0){
+
+        resultado.innerHTML=`
+
         <div class="card">
-            <h2>⚠ Escribe una marca, modelo o VIN</h2>
+
+            <h2>❌ No encontrado</h2>
+
+            <p>No existe todavía en el Catálogo Atlas.</p>
+
         </div>
+
         `;
 
         return;
+
     }
 
-    const coche = DATABASE.coches.find(c =>
+    let html="";
 
-        c.busquedas.some(b => texto.includes(b))
+    coches.forEach(coche=>{
 
-    );
+        html+=`
 
-    if (!coche) {
-
-        resultado.innerHTML = `
         <div class="card">
-            <h2>❌ Vehículo no encontrado</h2>
-            <p>Próximamente MonteroGaraje buscará este coche en toda Europa.</p>
+
+            <h2>${coche.marca} ${coche.modelo}</h2>
+
+            <p><strong>Generaciones:</strong></p>
+
+            <ul>
+
+            ${coche.generaciones.map(g=>`<li>${g}</li>`).join("")}
+
+            </ul>
+
+            <p><strong>Versiones:</strong></p>
+
+            <ul>
+
+            ${coche.versiones.map(v=>`<li>${v}</li>`).join("")}
+
+            </ul>
+
         </div>
+
         `;
 
-        return;
-    }
+    });
 
-    resultado.innerHTML = `
-
-    <div class="card">
-
-        <img src="${coche.imagen}" alt="${coche.modelo}">
-
-        <h2>${coche.marca} ${coche.modelo}</h2>
-
-        <p><strong>⭐ Índice Montero:</strong> ${coche.indice}/100</p>
-
-        <p><strong>💶 Precio medio Europa:</strong> ${coche.precioEuropa}</p>
-
-        <p><strong>🌍 Mejor país:</strong> ${coche.mejorPais}</p>
-
-        <p><strong>⛽ Combustible:</strong> ${coche.combustible}</p>
-
-        <p><strong>⚙ Cambio:</strong> ${coche.cambio}</p>
-
-        <p><strong>🏁 Potencia:</strong> ${coche.potencia}</p>
-
-        <p><strong>🚘 Tracción:</strong> ${coche.traccion}</p>
-
-        <hr>
-
-        <h3>🤖 MonteroAI</h3>
-
-        <p>${coche.ia}</p>
-
-        <hr>
-
-        <button>📷 Ver galería</button>
-
-        <button>📋 Historial</button>
-
-        <button>💶 Comparar en Europa</button>
-
-    </div>
-
-    `;
+    resultado.innerHTML=html;
 
 }
