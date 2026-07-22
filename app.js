@@ -12,9 +12,7 @@ function buscarCoche() {
         .value
         .trim();
 
-    if (texto === "") {
-        return;
-    }
+    if (texto === "") return;
 
     const coches = Buscador.buscar(texto);
 
@@ -28,6 +26,7 @@ function buscarCoche() {
         `;
 
         return;
+
     }
 
     Anuncios.mostrar(coches);
