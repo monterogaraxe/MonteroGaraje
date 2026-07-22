@@ -1,41 +1,33 @@
 /*
 ========================================
 ÍNDICE MONTERO
-VERSIÓN 1.0
+Proyecto Atlas
 ========================================
 */
 
-const IndiceMontero = {
+const Indice = {
 
-    calcular(datos){
+    calcular(coche){
 
-        let puntuacion = 100;
+        let puntos = 50;
 
-        if(datos.accidentes)
-            puntuacion -= 20;
+        if(coche.precio < 15000){
+            puntos += 20;
+        }
 
-        if(!datos.libroMantenimiento)
-            puntuacion -= 10;
+        if(coche.pais === "Alemania"){
+            puntos += 10;
+        }
 
-        if(datos.km > 200000)
-            puntuacion -= 15;
+        if(coche.potencia > 250){
+            puntos += 10;
+        }
 
-        if(datos.propietarios > 3)
-            puntuacion -= 10;
+        if(puntos > 100){
+            puntos = 100;
+        }
 
-        if(datos.importado)
-            puntuacion -= 2;
-
-        if(datos.precio < datos.precioMercado * 0.75)
-            puntuacion += 5;
-
-        if(puntuacion > 100)
-            puntuacion = 100;
-
-        if(puntuacion < 0)
-            puntuacion = 0;
-
-        return puntuacion;
+        return puntos;
 
     }
 
