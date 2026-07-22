@@ -11,6 +11,8 @@ const Ficha = {
 
         const resultado = document.getElementById("resultado");
 
+        const analisis = MonteroAI.analizar(coche);
+
         resultado.innerHTML = `
 
         <div class="card">
@@ -35,13 +37,9 @@ const Ficha = {
 
             <hr>
 
-            <h3>⭐ Índice Montero</h3>
-
-            <p>Calculando...</p>
-
             <h3>🤖 MonteroAI</h3>
 
-            <p>Analizando vehículo...</p>
+            <p>${analisis}</p>
 
         </div>
 
