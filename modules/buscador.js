@@ -1,7 +1,7 @@
 /*
 ========================================
-MOTOR ATLAS
-BUSCADOR INTELIGENTE 2.0
+BUSCADOR ATLAS 3.0
+MonteroGaraje
 ========================================
 */
 
@@ -11,36 +11,23 @@ const Buscador = {
 
         texto = texto.toLowerCase().trim();
 
-        let encontrados = [];
+        return VEHICULOS.filter(coche => {
 
-        for(let marca in CATALOGO){
+            return (
 
-            for(let modelo in CATALOGO[marca]){
+                coche.marca.toLowerCase().includes(texto) ||
 
-                if(
-                    texto.includes(marca.toLowerCase()) ||
-                    texto.includes(modelo.toLowerCase())
-                ){
+                coche.modelo.toLowerCase().includes(texto) ||
 
-                    encontrados.push({
+                coche.generacion.toLowerCase().includes(texto) ||
 
-                        marca: marca,
+                coche.version.toLowerCase().includes(texto) ||
 
-                        modelo: modelo,
+                coche.motor.toLowerCase().includes(texto)
 
-                        generaciones: CATALOGO[marca][modelo].generaciones,
+            );
 
-                        versiones: CATALOGO[marca][modelo].versiones
-
-                    });
-
-                }
-
-            }
-
-        }
-
-        return encontrados;
+        });
 
     }
 
