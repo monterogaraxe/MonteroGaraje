@@ -59,3 +59,5 @@ function buscarCoche() {
     resultado.innerHTML = html;
 
 }
+console.log("Buscador:", Buscador);
+console.log("VEHICULOS:", VEHICULOS);
