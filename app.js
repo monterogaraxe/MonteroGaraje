@@ -1,24 +1,32 @@
-console.log("APP OK");
 /*
 ========================================
 APP PRINCIPAL
-MonteroGaraje Atlas 3.0
+Proyecto Atlas 2.0
 ========================================
 */
 
-console.log("APP CARGADA");
+console.log("Atlas iniciado");
 
 function buscarCoche() {
 
-    const texto = document.getElementById("busqueda").value;
+    const texto = document
+        .getElementById("busqueda")
+        .value
+        .trim();
+
     const resultado = document.getElementById("resultado");
 
-    if (!texto.trim()) {
+    if (texto === "") {
+
         resultado.innerHTML = `
         <div class="card">
-            <h2>Introduce una búsqueda</h2>
-        </div>`;
+            <h2>🔎 Escribe una búsqueda</h2>
+            <p>Ejemplo: Golf, RS3, Focus RS...</p>
+        </div>
+        `;
+
         return;
+
     }
 
     const coches = Buscador.buscar(texto);
@@ -29,28 +37,53 @@ function buscarCoche() {
         <div class="card">
             <h2>❌ No encontrado</h2>
             <p>No existen resultados para "${texto}".</p>
-        </div>`;
+        </div>
+        `;
 
         return;
+
+    }
+
+    if (coches.length === 1) {
+
+        Ficha.mostrar(coches[0]);
+
+        return;
+
     }
 
     let html = "";
 
     coches.forEach(coche => {
 
+        const indice = Indice.calcular(coche);
+
         html += `
+
         <div class="card">
+
             <h2>${coche.marca} ${coche.modelo}</h2>
 
             <p><strong>Generación:</strong> ${coche.generacion}</p>
+
             <p><strong>Versión:</strong> ${coche.version}</p>
+
             <p><strong>Motor:</strong> ${coche.motor}</p>
-            <p><strong>Potencia:</strong> ${coche.potencia} CV</p>
-            <p><strong>Combustible:</strong> ${coche.combustible}</p>
-            <p><strong>País:</strong> ${coche.pais}</p>
+
             <p><strong>Precio:</strong> ${coche.precio.toLocaleString("es-ES")} €</p>
-        </div>`;
+
+            <p><strong>⭐ Índice Montero:</strong> ${indice}/100</p>
+
+            <button onclick="Ficha.mostrar(VEHICULOS.find(v => v.motor === '${coche.motor}'))">
+                Analizar
+            </button>
+
+        </div>
+
+        `;
+
     });
 
     resultado.innerHTML = html;
+
 }
