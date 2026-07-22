@@ -1,15 +1,2 @@
-const Anuncios = {
-
-    iniciar() {
-
-        console.log("Anuncios iniciados");
-
-    }
-
-};
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    Anuncios.iniciar();
-
-});
+// Módulo reservado para futuras funciones de anuncios.
+// De momento no contiene código.
