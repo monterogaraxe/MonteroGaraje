@@ -1,3 +1,4 @@
+console.log("APP OK");
 /*
 ========================================
 APP PRINCIPAL
