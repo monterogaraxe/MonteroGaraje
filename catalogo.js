@@ -1,6 +1,6 @@
 /*
 ========================================
-CATÁLOGO ATLAS 1.0
+CATÁLOGO ATLAS 2.0
 MonteroGaraje
 ========================================
 */
@@ -10,6 +10,7 @@ const CATALOGO = {
     Volkswagen: {
 
         Golf: {
+
             generaciones: [
                 "MK1",
                 "MK2",
@@ -33,7 +34,29 @@ const CATALOGO = {
                 "GTD",
                 "Clubsport",
                 "R"
-            ]
+            ],
+
+            informacion: {
+
+                precioMedio: 13700,
+                mejorPrecio: 11900,
+                pais: "Alemania",
+                vendedor: "Profesional",
+                historial: "Completo",
+                accidentes: "Sin registros",
+                kilometrosVerificados: true,
+                indiceMontero: 94,
+                revalorizacion: "Muy alta",
+                transporte: 650,
+
+                gestoria: {
+                    nombre: "Pendiente",
+                    telefono: "Pendiente",
+                    comunidad: "Galicia"
+                }
+
+            }
+
         }
 
     },
@@ -53,7 +76,28 @@ const CATALOGO = {
                 "Sedan",
                 "Performance",
                 "Carbon Edition"
-            ]
+            ],
+
+            informacion: {
+
+                precioMedio: 59800,
+                mejorPrecio: 56500,
+                pais: "Alemania",
+                vendedor: "Profesional",
+                historial: "Completo",
+                accidentes: "Sin registros",
+                kilometrosVerificados: true,
+                indiceMontero: 97,
+                revalorizacion: "Muy alta",
+                transporte: 650,
+
+                gestoria: {
+                    nombre: "Pendiente",
+                    telefono: "Pendiente",
+                    comunidad: "Galicia"
+                }
+
+            }
 
         }
 
@@ -77,7 +121,28 @@ const CATALOGO = {
                 "CSL",
                 "Competition",
                 "Touring"
-            ]
+            ],
+
+            informacion: {
+
+                precioMedio: 74000,
+                mejorPrecio: 69800,
+                pais: "Alemania",
+                vendedor: "Profesional",
+                historial: "Completo",
+                accidentes: "Sin registros",
+                kilometrosVerificados: true,
+                indiceMontero: 96,
+                revalorizacion: "Alta",
+                transporte: 700,
+
+                gestoria: {
+                    nombre: "Pendiente",
+                    telefono: "Pendiente",
+                    comunidad: "Galicia"
+                }
+
+            }
 
         }
 
@@ -97,7 +162,28 @@ const CATALOGO = {
                 "Standard",
                 "Mountune",
                 "Heritage"
-            ]
+            ],
+
+            informacion: {
+
+                precioMedio: 36500,
+                mejorPrecio: 33800,
+                pais: "Países Bajos",
+                vendedor: "Profesional",
+                historial: "Completo",
+                accidentes: "Sin registros",
+                kilometrosVerificados: true,
+                indiceMontero: 95,
+                revalorizacion: "Muy alta",
+                transporte: 850,
+
+                gestoria: {
+                    nombre: "Pendiente",
+                    telefono: "Pendiente",
+                    comunidad: "Galicia"
+                }
+
+            }
 
         }
 
@@ -114,10 +200,9 @@ const CATALOGO = {
             versiones: [
                 "VZ",
                 "VZ5"
-            ]
+            ],
 
-        }
+            informacion: {
 
-    }
-
-};
+                precioMedio: 54500,
+                mejorPrecio: 512
