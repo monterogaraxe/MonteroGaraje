@@ -1,7 +1,7 @@
 /*
 ========================================
 FICHA DEL VEHÍCULO
-Proyecto Atlas
+Proyecto Atlas 2.0
 ========================================
 */
 
@@ -12,6 +12,7 @@ const Ficha = {
         const resultado = document.getElementById("resultado");
 
         const analisis = MonteroAI.analizar(coche);
+        const indice = Indice.calcular(coche);
 
         resultado.innerHTML = `
 
@@ -22,18 +23,18 @@ const Ficha = {
             <hr>
 
             <p><strong>Generación:</strong> ${coche.generacion}</p>
-
             <p><strong>Versión:</strong> ${coche.version}</p>
-
             <p><strong>Motor:</strong> ${coche.motor}</p>
-
             <p><strong>Potencia:</strong> ${coche.potencia} CV</p>
-
             <p><strong>Combustible:</strong> ${coche.combustible}</p>
-
             <p><strong>País:</strong> ${coche.pais}</p>
-
             <p><strong>Precio:</strong> ${coche.precio.toLocaleString("es-ES")} €</p>
+
+            <hr>
+
+            <h3>⭐ Índice Montero</h3>
+
+            <h2>${indice}/100</h2>
 
             <hr>
 
@@ -44,6 +45,10 @@ const Ficha = {
         </div>
 
         `;
+
+        resultado.scrollIntoView({
+            behavior:"smooth"
+        });
 
     }
 
