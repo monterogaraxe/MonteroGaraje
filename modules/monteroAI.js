@@ -1,7 +1,7 @@
 /*
 ========================================
 MONTERO AI
-Proyecto Atlas
+Proyecto Atlas 2.0
 ========================================
 */
 
@@ -9,23 +9,33 @@ const MonteroAI = {
 
     analizar(coche){
 
-        let mensaje = "";
+        let mensaje = [];
 
         if(coche.precio < 20000){
-
-            mensaje = "🟢 Excelente oportunidad de compra.";
-
-        }else if(coche.precio < 40000){
-
-            mensaje = "🟡 Precio dentro del mercado.";
-
+            mensaje.push("💰 Precio competitivo.");
         }else{
-
-            mensaje = "🔴 Precio elevado. Conviene comparar más unidades.";
-
+            mensaje.push("💰 Precio dentro de la media.");
         }
 
-        return mensaje;
+        if(coche.historial){
+            mensaje.push("📋 Historial disponible.");
+        }else{
+            mensaje.push("⚠️ Sin historial confirmado.");
+        }
+
+        if(coche.km < 100000){
+            mensaje.push("✅ Kilometraje bajo.");
+        }else if(coche.km < 180000){
+            mensaje.push("🟡 Kilometraje razonable.");
+        }else{
+            mensaje.push("🔧 Kilometraje elevado, revisar mantenimiento.");
+        }
+
+        if(coche.propietarios === 1){
+            mensaje.push("⭐ Un solo propietario.");
+        }
+
+        return mensaje.join("<br>");
 
     }
 
