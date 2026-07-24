@@ -378,3 +378,22 @@ width:100%;
 }
 
 }
+/* ========================================
+   FOTO FICHA
+======================================== */
+
+.foto-coche{
+
+    width:100%;
+
+    max-height:350px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+    margin:20px 0;
+
+    border:2px solid #22c55e;
+
+}
