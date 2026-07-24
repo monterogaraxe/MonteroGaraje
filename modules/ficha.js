@@ -11,8 +11,9 @@ const Ficha = {
 
         const resultado = document.getElementById("resultado");
 
-        const analisis = MonteroAI.analizar(coche);
         const indice = Indice.calcular(coche);
+
+        const analisis = MonteroAI.analizar(coche);
 
         resultado.innerHTML = `
 
@@ -20,23 +21,28 @@ const Ficha = {
 
             <h2>${coche.marca} ${coche.modelo}</h2>
 
-            <hr>
+            <hr><br>
 
             <p><strong>Generación:</strong> ${coche.generacion}</p>
             <p><strong>Versión:</strong> ${coche.version}</p>
             <p><strong>Motor:</strong> ${coche.motor}</p>
             <p><strong>Potencia:</strong> ${coche.potencia} CV</p>
             <p><strong>Combustible:</strong> ${coche.combustible}</p>
+            <p><strong>Año:</strong> ${coche.anio}</p>
+            <p><strong>Kilómetros:</strong> ${coche.km.toLocaleString("es-ES")} km</p>
+            <p><strong>Cambio:</strong> ${coche.cambio}</p>
+            <p><strong>Color:</strong> ${coche.color}</p>
             <p><strong>País:</strong> ${coche.pais}</p>
+            <p><strong>Propietarios:</strong> ${coche.propietarios}</p>
             <p><strong>Precio:</strong> ${coche.precio.toLocaleString("es-ES")} €</p>
 
-            <hr>
+            <br>
 
             <h3>⭐ Índice Montero</h3>
 
             <h2>${indice}/100</h2>
 
-            <hr>
+            <br>
 
             <h3>🤖 MonteroAI</h3>
 
@@ -45,10 +51,6 @@ const Ficha = {
         </div>
 
         `;
-
-        resultado.scrollIntoView({
-            behavior:"smooth"
-        });
 
     }
 
