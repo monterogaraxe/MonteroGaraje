@@ -1,399 +1,273 @@
-/* ========= RESET ========= */
+/* ========================================
+   MONTEROGARAJE - STYLE.CSS
+   PARTE 1
+======================================== */
+
+/* RESET */
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-
-font-family:Arial,Helvetica,sans-serif;
-
-background:#0b1120;
-
-color:#ffffff;
-
-line-height:1.6;
-
+    font-family:Arial,Helvetica,sans-serif;
+    background:#0b1120;
+    color:#ffffff;
+    line-height:1.6;
 }
 
-/* ========= NAVBAR ========= */
+/* HEADER */
 
 header{
-
-background:#111827;
-
-border-bottom:2px solid #22c55e;
-
+    background:#111827;
+    border-bottom:2px solid #22c55e;
 }
 
+/* NAVBAR */
+
 .navbar{
-
-max-width:1400px;
-
-margin:auto;
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-padding:20px;
-
+    max-width:1400px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px;
 }
 
 .logo{
-
-font-size:30px;
-
-font-weight:bold;
-
-color:white;
-
+    font-size:30px;
+    font-weight:bold;
 }
 
 .logo span{
-
-color:#22c55e;
-
+    color:#22c55e;
 }
 
 .menu{
-
-display:flex;
-
-list-style:none;
-
-gap:30px;
-
+    display:flex;
+    list-style:none;
+    gap:25px;
 }
 
 .menu a{
-
-text-decoration:none;
-
-color:white;
-
-font-weight:bold;
-
-transition:.3s;
-
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    transition:.25s;
 }
 
 .menu a:hover{
-
-color:#22c55e;
-
+    color:#22c55e;
 }
 
-/* ========= HERO ========= */
+/* HERO */
 
 .hero{
-
-max-width:1200px;
-
-margin:auto;
-
-padding:70px 20px;
-
-text-align:center;
-
+    max-width:1200px;
+    margin:auto;
+    text-align:center;
+    padding:70px 20px;
 }
 
 .hero h1{
-
-font-size:48px;
-
-margin-bottom:20px;
-
+    font-size:48px;
+    margin-bottom:20px;
 }
 
 .hero p{
-
-font-size:20px;
-
-color:#cbd5e1;
-
-margin-bottom:40px;
-
+    font-size:20px;
+    color:#cbd5e1;
+    margin-bottom:40px;
 }
 
-/* ========= BUSCADOR ========= */
+/* BUSCADOR */
 
 .search-box{
-
-display:flex;
-
-justify-content:center;
-
-gap:15px;
-
-flex-wrap:wrap;
-
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:15px;
+    flex-wrap:wrap;
 }
 
 .search-box input{
-
-width:650px;
-
-max-width:95%;
-
-padding:18px;
-
-border:none;
-
-border-radius:12px;
-
-font-size:18px;
-
-outline:none;
-
-background:white;
-
-color:black;
-
+    width:650px;
+    max-width:95%;
+    padding:18px;
+    border:none;
+    border-radius:12px;
+    outline:none;
+    font-size:18px;
 }
 
 .search-box button{
-
-padding:18px 35px;
-
-background:#22c55e;
-
-border:none;
-
-border-radius:12px;
-
-font-size:18px;
-
-font-weight:bold;
-
-cursor:pointer;
-
-color:white;
-
-transition:.3s;
-
+    padding:18px 35px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    background:#22c55e;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    transition:.25s;
 }
 
 .search-box button:hover{
-
-background:#16a34a;
-
-transform:scale(1.03);
-
+    background:#16a34a;
+    transform:translateY(-2px);
 }
 
-/* ========= MAIN ========= */
+/* MAIN */
 
 main{
-
-max-width:1400px;
-
-margin:auto;
-
-padding:40px 20px;
-
+    max-width:1400px;
+    margin:auto;
+    padding:40px 20px;
 }
 
 .featured{
-
-margin-top:70px;
-
+    margin-top:70px;
 }
 
 .featured h2{
-
-font-size:32px;
-
-margin-bottom:25px;
-
-color:#22c55e;
-
+    color:#22c55e;
+    font-size:32px;
+    margin-bottom:25px;
 }
-/* ========= GRID ========= */
+
+/* GRID */
 
 .grid{
-
-display:grid;
-
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-
-gap:25px;
-
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
 }
+/* ========================================
+   PARTE 2
+======================================== */
 
-/* ========= TARJETAS ========= */
+/* TARJETAS */
 
 .card{
-
-background:#1e293b;
-
-border:1px solid #334155;
-
-border-radius:18px;
-
-padding:25px;
-
-transition:.30s;
-
-box-shadow:0 10px 25px rgba(0,0,0,.30);
-
+    background:#1e293b;
+    border:1px solid #334155;
+    border-radius:18px;
+    padding:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,.30);
+    transition:.30s;
 }
 
 .card:hover{
+    transform:translateY(-6px);
+    border-color:#22c55e;
+}
 
-transform:translateY(-8px);
-
-border-color:#22c55e;
-
+.card h2{
+    font-size:28px;
+    margin-bottom:15px;
 }
 
 .card h3{
-
-font-size:24px;
-
-margin-bottom:15px;
-
-color:white;
-
+    font-size:22px;
+    margin-bottom:15px;
+    color:#22c55e;
 }
 
 .card p{
-
-color:#cbd5e1;
-
-margin-bottom:20px;
-
+    color:#cbd5e1;
+    margin-bottom:12px;
 }
 
-.card img{
+/* FOTO VEHÍCULO */
 
-width:100%;
-
-height:220px;
-
-object-fit:cover;
-
-border-radius:12px;
-
-margin-bottom:20px;
-
+.foto-coche{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    border-radius:15px;
+    border:2px solid #22c55e;
+    margin:20px 0;
 }
+
+/* BOTONES */
 
 .card button{
-
-width:100%;
-
-padding:15px;
-
-border:none;
-
-border-radius:10px;
-
-background:#2563eb;
-
-color:white;
-
-font-size:16px;
-
-font-weight:bold;
-
-cursor:pointer;
-
-transition:.30s;
-
+    width:100%;
+    padding:15px;
+    margin-top:15px;
+    border:none;
+    border-radius:10px;
+    background:#2563eb;
+    color:white;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.25s;
 }
 
 .card button:hover{
-
-.card button:hover{
-
     background:#1d4ed8;
-
 }
+
+/* RESULTADO */
+
+#resultado{
+    margin-bottom:40px;
+}
+
+/* FOOTER */
 
 footer{
-
     margin-top:80px;
-
     padding:30px;
-
     text-align:center;
-
     color:#94a3b8;
-
     border-top:1px solid #334155;
-
 }
+
+/* RESPONSIVE */
 
 @media(max-width:768px){
 
-.navbar{
+    .navbar{
+        flex-direction:column;
+        gap:20px;
+    }
 
-flex-direction:column;
+    .menu{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+    }
 
-gap:20px;
+    .hero h1{
+        font-size:34px;
+    }
 
-}
+    .hero p{
+        font-size:18px;
+    }
 
-.menu{
+    .search-box{
+        flex-direction:column;
+    }
 
-flex-wrap:wrap;
+    .search-box input{
+        width:100%;
+    }
 
-justify-content:center;
+    .card{
+        padding:20px;
+    }
 
-gap:15px;
-
-}
-
-.hero h1{
-
-font-size:34px;
-
-}
-
-.hero p{
-
-font-size:18px;
-
-}
-
-.search-box{
-
-flex-direction:column;
-
-}
-
-.search-box input{
-
-width:100%;
-
-}
-
-}
-/* ========================================
-   FOTO FICHA
-======================================== */
-
-.foto-coche{
-
-    width:100%;
-
-    max-height:350px;
-
-    object-fit:cover;
-
-    border-radius:15px;
-
-    margin:20px 0;
-
-    border:2px solid #22c55e;
+    .foto-coche{
+        height:220px;
+    }
 
 }
