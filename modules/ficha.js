@@ -1,8 +1,7 @@
 /*
 ========================================
 FICHA DEL VEHÍCULO
-Proyecto Atlas 5.0
-MonteroGaraje
+Proyecto Atlas 2.1
 ========================================
 */
 
@@ -13,12 +12,11 @@ const Ficha = {
         const resultado = document.getElementById("resultado");
 
         const indice = Indice.calcular(coche);
-
         const nivel = Indice.nivel(indice);
 
         const analisis = MonteroAI.analizar(coche);
 
-        const mercado = Mercado.analizar(coche);
+        const mercado = Mercado.calcular(coche);
 
         resultado.innerHTML = `
 
@@ -26,11 +24,9 @@ const Ficha = {
 
             <h2>${coche.marca} ${coche.modelo}</h2>
 
-            <img
-                src="${coche.imagen}"
-                alt="${coche.marca} ${coche.modelo}"
-                class="foto-coche"
-            >
+            <img class="foto-coche"
+                 src="${coche.imagen}"
+                 alt="${coche.marca} ${coche.modelo}">
 
             <hr><br>
 
@@ -45,35 +41,25 @@ const Ficha = {
             <p><strong>Color:</strong> ${coche.color}</p>
             <p><strong>País:</strong> ${coche.pais}</p>
             <p><strong>Propietarios:</strong> ${coche.propietarios}</p>
-            <p><strong>Historial:</strong> ${coche.historial ? "✅ Disponible" : "❌ No disponible"}</p>
-            <p><strong>ITV:</strong> ${coche.itv ? "✅ Al día" : "❌ Pendiente"}</p>
-            <p><strong>Etiqueta:</strong> ${coche.etiqueta}</p>
 
-            <hr><br>
+            <p><strong>Historial:</strong> ${coche.historial}</p>
+            <p><strong>ITV:</strong> ${coche.itv}</p>
 
-            <h3>📊 Análisis de mercado</h3>
+            <p><strong>Precio:</strong> ${coche.precio.toLocaleString("es-ES")} €</p>
 
-            <p><strong>Precio:</strong> ${mercado.precio.toLocaleString("es-ES")} €</p>
+            <p><strong>Precio de mercado:</strong> ${mercado.valor.toLocaleString("es-ES")} €</p>
 
-            <p><strong>Precio medio Europa:</strong> ${mercado.mercado.toLocaleString("es-ES")} €</p>
+            <p><strong>Diferencia:</strong> ${mercado.estado}</p>
 
-            <p><strong>Ahorro:</strong> ${mercado.ahorro.toLocaleString("es-ES")} €</p>
-
-            <p><strong>${mercado.estado}</strong></p>
-
-            <hr><br>
+            <br>
 
             <h3>⭐ Índice Montero</h3>
 
-            <div class="barra-indice">
-                <div class="barra-progreso" style="width:${indice}%"></div>
-            </div>
-
             <h2>${indice}/100</h2>
 
-            <p><strong>${nivel}</strong></p>
+            <p>${nivel}</p>
 
-            <hr><br>
+            <br>
 
             <h3>🤖 MonteroAI</h3>
 
