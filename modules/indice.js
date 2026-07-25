@@ -1,7 +1,7 @@
 /*
 ========================================
-ÍNDICE MONTERO
-Proyecto Atlas 2.0
+ÍNDICE MONTERO 2.0
+Proyecto Atlas
 ========================================
 */
 
@@ -11,49 +11,37 @@ const Indice = {
 
         let puntos = 50;
 
-        // Precio
-        if(coche.precio <= 10000){
-            puntos += 25;
-        }else if(coche.precio <= 20000){
-            puntos += 15;
-        }else if(coche.precio <= 30000){
-            puntos += 10;
-        }
+        if(coche.historial) puntos += 15;
 
-        // País
-        if(coche.pais === "Alemania"){
-            puntos += 10;
-        }
+        if(coche.itv) puntos += 10;
 
-        // Potencia
-        if(coche.potencia >= 300){
-            puntos += 10;
-        }else if(coche.potencia >= 200){
-            puntos += 5;
-        }
+        if(coche.propietarios <= 2) puntos += 10;
 
-        // Historial
-        if(coche.historial){
-            puntos += 5;
-        }
+        if(coche.km < 180000) puntos += 10;
 
-        // ITV
-        if(coche.itv){
-            puntos += 5;
-        }
+        if(coche.pais === "Alemania") puntos += 5;
 
-        // Kilómetros
-        if(coche.km <= 100000){
-            puntos += 10;
-        }else if(coche.km <= 150000){
-            puntos += 5;
-        }
+        if(coche.precio < 15000) puntos += 10;
 
         if(puntos > 100){
             puntos = 100;
         }
 
         return puntos;
+
+    },
+
+    nivel(puntos){
+
+        if(puntos >= 90) return "🟢 Excelente compra";
+
+        if(puntos >= 75) return "🟢 Muy recomendable";
+
+        if(puntos >= 60) return "🟡 Buena compra";
+
+        if(puntos >= 40) return "🟠 Revisar antes de comprar";
+
+        return "🔴 Riesgo elevado";
 
     }
 
