@@ -1,7 +1,7 @@
 /*
 ========================================
 FICHA DEL VEHÍCULO
-Proyecto Atlas 4.0
+Proyecto Atlas 5.0
 MonteroGaraje
 ========================================
 */
@@ -17,6 +17,8 @@ const Ficha = {
         const nivel = Indice.nivel(indice);
 
         const analisis = MonteroAI.analizar(coche);
+
+        const mercado = Mercado.analizar(coche);
 
         resultado.innerHTML = `
 
@@ -46,9 +48,20 @@ const Ficha = {
             <p><strong>Historial:</strong> ${coche.historial ? "✅ Disponible" : "❌ No disponible"}</p>
             <p><strong>ITV:</strong> ${coche.itv ? "✅ Al día" : "❌ Pendiente"}</p>
             <p><strong>Etiqueta:</strong> ${coche.etiqueta}</p>
-            <p><strong>Precio:</strong> ${coche.precio.toLocaleString("es-ES")} €</p>
 
-            <br>
+            <hr><br>
+
+            <h3>📊 Análisis de mercado</h3>
+
+            <p><strong>Precio:</strong> ${mercado.precio.toLocaleString("es-ES")} €</p>
+
+            <p><strong>Precio medio Europa:</strong> ${mercado.mercado.toLocaleString("es-ES")} €</p>
+
+            <p><strong>Ahorro:</strong> ${mercado.ahorro.toLocaleString("es-ES")} €</p>
+
+            <p><strong>${mercado.estado}</strong></p>
+
+            <hr><br>
 
             <h3>⭐ Índice Montero</h3>
 
@@ -60,7 +73,7 @@ const Ficha = {
 
             <p><strong>${nivel}</strong></p>
 
-            <br>
+            <hr><br>
 
             <h3>🤖 MonteroAI</h3>
 
