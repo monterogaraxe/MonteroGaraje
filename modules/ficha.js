@@ -16,7 +16,7 @@ const Ficha = {
 
         const analisis = MonteroAI.analizar(coche);
 
-        const mercado = Mercado.calcular(coche);
+        const mercado = Mercado.analizar(coche);
 
         resultado.innerHTML = `
 
@@ -47,9 +47,11 @@ const Ficha = {
 
             <p><strong>Precio:</strong> ${coche.precio.toLocaleString("es-ES")} €</p>
 
-            <p><strong>Precio de mercado:</strong> ${mercado.valor.toLocaleString("es-ES")} €</p>
+            <p><strong>Precio de mercado:</strong> ${mercado.mercado.toLocaleString("es-ES")} €</p>
 
-            <p><strong>Diferencia:</strong> ${mercado.estado}</p>
+            <p><strong>Ahorro:</strong> ${mercado.ahorro.toLocaleString("es-ES")} €</p>
+
+            <p><strong>Resultado:</strong> ${mercado.estado}</p>
 
             <br>
 
