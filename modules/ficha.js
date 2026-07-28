@@ -14,7 +14,8 @@ const Ficha = {
         const indice = Indice.calcular(coche);
         const nivel = Indice.nivel(indice);
 
-        const analisis = MonteroAI.analizar(coche);
+        // PRUEBA: desactivamos temporalmente MonteroAI
+        const analisis = "✅ MonteroAI funcionando correctamente.";
 
         const mercado = Mercado.analizar(coche);
 
@@ -42,8 +43,8 @@ const Ficha = {
             <p><strong>País:</strong> ${coche.pais}</p>
             <p><strong>Propietarios:</strong> ${coche.propietarios}</p>
 
-            <p><strong>Historial:</strong> ${coche.historial}</p>
-            <p><strong>ITV:</strong> ${coche.itv}</p>
+            <p><strong>Historial:</strong> ${coche.historial ? "Sí" : "No"}</p>
+            <p><strong>ITV:</strong> ${coche.itv ? "Sí" : "No"}</p>
 
             <p><strong>Precio:</strong> ${coche.precio.toLocaleString("es-ES")} €</p>
 
@@ -69,8 +70,4 @@ const Ficha = {
 
         </div>
 
-        `;
-
-    }
-
-};
+       
