@@ -1,7 +1,7 @@
 /*
 ========================================
-MONTERO AI
-Proyecto Atlas 2.0
+MONTERO AI 2.0
+Proyecto Atlas
 ========================================
 */
 
@@ -9,33 +9,43 @@ const MonteroAI = {
 
     analizar(coche){
 
-        let mensaje = [];
+        let mensaje = "";
 
-        if(coche.precio < 20000){
-            mensaje.push("💰 Precio competitivo.");
+        if(coche.precio < coche.precioMercado){
+
+            mensaje += "✅ Esta unidad está por debajo del precio medio europeo. ";
+
         }else{
-            mensaje.push("💰 Precio dentro de la media.");
+
+            mensaje += "⚠️ El precio está por encima de la media europea. ";
+
         }
 
         if(coche.historial){
-            mensaje.push("📋 Historial disponible.");
+
+            mensaje += "Dispone de historial de mantenimiento. ";
+
         }else{
-            mensaje.push("⚠️ Sin historial confirmado.");
+
+            mensaje += "No consta historial de mantenimiento. ";
+
         }
 
-        if(coche.km < 100000){
-            mensaje.push("✅ Kilometraje bajo.");
-        }else if(coche.km < 180000){
-            mensaje.push("🟡 Kilometraje razonable.");
-        }else{
-            mensaje.push("🔧 Kilometraje elevado, revisar mantenimiento.");
+        if(coche.propietarios <= 2){
+
+            mensaje += "Ha tenido pocos propietarios. ";
+
         }
 
-        if(coche.propietarios === 1){
-            mensaje.push("⭐ Un solo propietario.");
+        if(coche.km < 180000){
+
+            mensaje += "El kilometraje es adecuado para su antigüedad. ";
+
         }
 
-        return mensaje.join("<br>");
+        mensaje += "MonteroAI recomienda revisar el vehículo presencialmente antes de cerrar la compra.";
+
+        return mensaje;
 
     }
 
