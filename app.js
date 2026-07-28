@@ -39,9 +39,9 @@ function buscarCoche() {
 
     resultado.innerHTML = "";
 
-    coches.forEach((coche, index) => {
+    coches.forEach(coche => {
 
-        const id = `${coche.marca}-${coche.modelo}-${coche.version}`;
+        const id = coche.id;
 
         const favorito = Favoritos.existe(id);
 
@@ -55,7 +55,7 @@ function buscarCoche() {
 
             <p><strong>${coche.precio.toLocaleString("es-ES")} €</strong></p>
 
-            <button onclick="Ficha.mostrar(VEHICULOS[${index}])">
+            <button onclick="Ficha.mostrar(VEHICULOS.find(v => v.id==='${coche.id}'))">
                 🔍 Analizar
             </button>
 
