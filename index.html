@@ -1,11 +1,9 @@
 <!DOCTYPE html>
-
 <html lang="es">
 
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>MonteroGaraje</title>
@@ -21,25 +19,17 @@
 <nav class="navbar">
 
 <div class="logo">
-
 🚗 <span>MonteroGaraje</span>
-
 </div>
 
 <ul class="menu">
 
 <li><a href="#">Inicio</a></li>
-
 <li><a href="#">Buscar</a></li>
-
 <li><a href="#">Comparador</a></li>
-
 <li><a href="#">Importación</a></li>
-
 <li><a href="#">Transporte</a></li>
-
 <li><a href="#">MonteroAI</a></li>
-
 <li><a href="#">Mi Cuenta</a></li>
 
 </ul>
@@ -75,7 +65,6 @@ placeholder="Marca, modelo, versión o VIN">
 </section>
 
 </header>
-
 <main>
 
 <section id="resultado">
@@ -87,14 +76,13 @@ placeholder="Marca, modelo, versión o VIN">
 <h2>🔥 Oportunidades del día</h2>
 
 <div class="grid">
-  <div class="card">
+
+<div class="card">
 
 <h3>Ford Focus RS MK2</h3>
 
 <p>
-
 Precio inferior a la media europea.
-
 </p>
 
 <button onclick="document.getElementById('busqueda').value='Focus RS';buscarCoche();">
@@ -110,9 +98,7 @@ Analizar
 <h3>Audi RS3</h3>
 
 <p>
-
 Historial completo y excelente precio.
-
 </p>
 
 <button onclick="document.getElementById('busqueda').value='RS3';buscarCoche();">
@@ -128,9 +114,7 @@ Analizar
 <h3>Volkswagen Golf</h3>
 
 <p>
-
 Todas las generaciones disponibles.
-
 </p>
 
 <button onclick="document.getElementById('busqueda').value='Golf';buscarCoche();">
@@ -146,156 +130,34 @@ Analizar
 <h3>BMW M3</h3>
 
 <p>
-
 Todas las generaciones M3.
-
 </p>
 
-<button onclick="document.getElementById('busqueda').value='M3';buscarCoche();">
-
-Analizar
-
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="featured">
-
-<h2>🌍 Servicios MonteroGaraje</h2>
-
-<div class="grid">
-
-<div class="card">
-
-<h3>📋 Historial</h3>
-
-<p>
-
-Historial del vehículo.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>🚛 Transporte</h3>
-
-<p>
-
-Calculadora de transporte europeo.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>💼 Gestorías</h3>
-
-<p>
-
-Gestorías recomendadas.
-
-</p>
-
-</div>
-<div class="card">
-
-<h3>💶 Importación</h3>
-
-<p>
-
-Calcularemos el coste real de importar el vehículo.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>⭐ Índice Montero</h3>
-
-<p>
-
-Valoración automática basada en historial, precio y estado.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>🤖 MonteroAI</h3>
-
-<p>
-
-Nuestra inteligencia artificial analizará la mejor unidad disponible.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="featured">
+<button onclick="document.get
+  <section class="featured">
 
 <h2>📈 Próximamente</h2>
 
 <div class="grid">
 
 <div class="card">
-
 <h3>🌍 Comparador Europeo</h3>
-
-<p>
-
-Comparación automática entre Mobile.de, Autoscout24, Subastas y otros portales.
-
-</p>
-
+<p>Comparación automática entre Mobile.de, Autoscout24, Subastas y otros portales.</p>
 </div>
 
 <div class="card">
-
 <h3>❤️ Favoritos</h3>
-
-<p>
-
-Guarda tus vehículos favoritos.
-
-</p>
-
+<p>Guarda tus vehículos favoritos.</p>
 </div>
 
 <div class="card">
-
 <h3>📉 Radar de oportunidades</h3>
-
-<p>
-
-Detectaremos automáticamente coches por debajo de su valor de mercado.
-
-</p>
-
+<p>Detectaremos automáticamente coches por debajo de su valor de mercado.</p>
 </div>
 
 <div class="card">
-
 <h3>🏆 Unidades especiales</h3>
-
-<p>
-
-Solo mostraremos la versión exacta que estés buscando.
-
-</p>
-
+<p>Solo mostraremos la versión exacta que estés buscando.</p>
 </div>
 
 </div>
@@ -313,11 +175,17 @@ Solo mostraremos la versión exacta que estés buscando.
 <script src="Data/vehiculos.js"></script>
 <script src="modules/buscador.js"></script>
 <script src="modules/indice.js"></script>
-  <script src="modules/mercado.js"></script>
+<script src="modules/mercado.js"></script>
 <script src="modules/monteroAI.js"></script>
 <script src="modules/ficha.js"></script>
-  <script src="modules/favoritos.js"></script>
-<script src="app.js"></script>
-</body>
+<script src="modules/favoritos.js"></script>
 
-</html>
+<script>
+console.log("Ficha:", typeof Ficha);
+console.log("Buscador:", typeof Buscador);
+console.log("Vehículos:", typeof VEHICULOS);
+</script>
+
+<script src="app.js"></script>
+
+</body
