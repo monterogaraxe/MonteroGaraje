@@ -1,7 +1,7 @@
 /*
 ========================================
 APP.JS
-Proyecto Atlas
+Proyecto Atlas 3.0
 MonteroGaraje
 ========================================
 */
@@ -11,39 +11,38 @@ function buscarCoche() {
     const texto = document
         .getElementById("busqueda")
         .value
+        .toLowerCase()
         .trim();
 
     const resultado = document.getElementById("resultado");
 
-    if (texto === "") {
+    if(texto === ""){
 
         resultado.innerHTML = `
         <div class="card">
             <h2>⚠️ Escribe una búsqueda.</h2>
         </div>
         `;
+
         return;
     }
 
     const coches = Buscador.buscar(texto);
 
-    if (coches.length === 0) {
+    if(coches.length === 0){
 
         resultado.innerHTML = `
         <div class="card">
             <h2>❌ No se encontraron vehículos.</h2>
         </div>
         `;
+
         return;
     }
 
     resultado.innerHTML = "";
 
     coches.forEach(coche => {
-
-        const id = coche.id;
-
-        const favorito = Favoritos.existe(id);
 
         resultado.innerHTML += `
 
@@ -55,12 +54,8 @@ function buscarCoche() {
 
             <p><strong>${coche.precio.toLocaleString("es-ES")} €</strong></p>
 
-            <button onclick="Ficha.mostrar(VEHICULOS.find(v => v.id==='${coche.id}'))">
+            <button onclick="Ficha.mostrar(${JSON.stringify(coche).replace(/"/g,'&quot;')})">
                 🔍 Analizar
-            </button>
-
-            <button onclick="Favoritos.cambiar('${id}'); buscarCoche();">
-                ${favorito ? "❤️ Guardado" : "🤍 Guardar"}
             </button>
 
         </div>
