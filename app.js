@@ -16,7 +16,7 @@ function buscarCoche() {
 
     const resultado = document.getElementById("resultado");
 
-    if(texto === ""){
+    if (texto === "") {
 
         resultado.innerHTML = `
         <div class="card">
@@ -29,7 +29,7 @@ function buscarCoche() {
 
     const coches = Buscador.buscar(texto);
 
-    if(coches.length === 0){
+    if (coches.length === 0) {
 
         resultado.innerHTML = `
         <div class="card">
@@ -54,7 +54,7 @@ function buscarCoche() {
 
             <p><strong>${coche.precio.toLocaleString("es-ES")} €</strong></p>
 
-            <button onclick="Ficha.mostrar(${JSON.stringify(coche).replace(/"/g,'&quot;')})">
+            <button onclick="Ficha.mostrar(VEHICULOS.find(v => v.id === '${coche.id}'))">
                 🔍 Analizar
             </button>
 
