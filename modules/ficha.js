@@ -1,7 +1,8 @@
 /*
 ========================================
-FICHA DEBUG
-Proyecto Atlas 3.0.1
+FICHA
+Proyecto Atlas 3.1
+MonteroGaraje
 ========================================
 */
 
@@ -28,24 +29,49 @@ const Ficha = {
 
                 <img
                     src="${coche.imagen}"
+                    alt="${coche.marca} ${coche.modelo}"
                     class="foto-coche"
                     onerror="this.style.display='none'">
 
                 <hr>
 
                 <p><strong>Generación:</strong> ${coche.generacion}</p>
+
                 <p><strong>Versión:</strong> ${coche.version}</p>
+
                 <p><strong>Motor:</strong> ${coche.motor}</p>
+
                 <p><strong>Potencia:</strong> ${coche.potencia} CV</p>
+
+                <p><strong>Combustible:</strong> ${coche.combustible}</p>
+
                 <p><strong>Año:</strong> ${coche.anio}</p>
-                <p><strong>Km:</strong> ${coche.km.toLocaleString("es-ES")} km</p>
+
+                <p><strong>Kilómetros:</strong> ${coche.km.toLocaleString("es-ES")} km</p>
+
+                <p><strong>Cambio:</strong> ${coche.cambio}</p>
+
+                <p><strong>Color:</strong> ${coche.color}</p>
+
+                <p><strong>País:</strong> ${coche.pais}</p>
+
                 <p><strong>Precio:</strong> ${coche.precio.toLocaleString("es-ES")} €</p>
 
                 <hr>
 
                 <h3>⭐ Índice Montero</h3>
 
-                <p>${indice}/100</p>
+                <div class="barra-indice">
+
+                    <div
+                        class="barra-indice-fill"
+                        style="width:${indice}%">
+
+                    </div>
+
+                </div>
+
+                <h2>${indice}/100</h2>
 
                 <p>${nivel}</p>
 
@@ -53,9 +79,9 @@ const Ficha = {
 
                 <h3>💶 Mercado</h3>
 
-                <p>Valor mercado: ${mercado.valor.toLocaleString("es-ES")} €</p>
+                <p><strong>Valor de mercado:</strong> ${mercado.valor.toLocaleString("es-ES")} €</p>
 
-                <p>Ahorro: ${mercado.ahorro.toLocaleString("es-ES")} €</p>
+                <p><strong>Ahorro:</strong> ${mercado.ahorro.toLocaleString("es-ES")} €</p>
 
                 <p>${mercado.estado}</p>
 
@@ -83,17 +109,9 @@ const Ficha = {
 
                 <h2>❌ ERROR DETECTADO</h2>
 
-                <p><strong>Mensaje:</strong></p>
+                <p><strong>${error.message}</strong></p>
 
-                <pre style="color:red;white-space:pre-wrap;">
-${error.message}
-                </pre>
-
-                <p><strong>Stack:</strong></p>
-
-                <pre style="font-size:12px;white-space:pre-wrap;">
-${error.stack}
-                </pre>
+                <pre>${error.stack}</pre>
 
                 <button onclick="buscarCoche()">
 
