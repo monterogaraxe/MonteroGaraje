@@ -1,8 +1,7 @@
 /*
 ========================================
-FICHA
+FICHA DEBUG
 Proyecto Atlas 3.0.1
-MonteroGaraje
 ========================================
 */
 
@@ -12,81 +11,103 @@ const Ficha = {
 
         const resultado = document.getElementById("resultado");
 
-        const indice = Indice.calcular(coche);
-        const nivel = Indice.nivel(indice);
+        try{
 
-        const mercado = Mercado.calcular(coche);
+            const indice = Indice.calcular(coche);
+            const nivel = Indice.nivel(indice);
 
-        const analisis = MonteroAI.analizar(coche);
+            const mercado = Mercado.calcular(coche);
 
-        resultado.innerHTML = `
+            const analisis = MonteroAI.analizar(coche);
 
-        <div class="card ficha">
+            resultado.innerHTML = `
 
-            <h2>${coche.marca} ${coche.modelo}</h2>
+            <div class="card ficha">
 
-            <img
-                src="${coche.imagen}"
-                alt="${coche.marca} ${coche.modelo}"
-                class="foto-coche">
+                <h2>${coche.marca} ${coche.modelo}</h2>
 
-            <hr>
+                <img
+                    src="${coche.imagen}"
+                    class="foto-coche"
+                    onerror="this.style.display='none'">
 
-            <p><strong>Generación:</strong> ${coche.generacion}</p>
+                <hr>
 
-            <p><strong>Versión:</strong> ${coche.version}</p>
+                <p><strong>Generación:</strong> ${coche.generacion}</p>
+                <p><strong>Versión:</strong> ${coche.version}</p>
+                <p><strong>Motor:</strong> ${coche.motor}</p>
+                <p><strong>Potencia:</strong> ${coche.potencia} CV</p>
+                <p><strong>Año:</strong> ${coche.anio}</p>
+                <p><strong>Km:</strong> ${coche.km.toLocaleString("es-ES")} km</p>
+                <p><strong>Precio:</strong> ${coche.precio.toLocaleString("es-ES")} €</p>
 
-            <p><strong>Motor:</strong> ${coche.motor}</p>
+                <hr>
 
-            <p><strong>Potencia:</strong> ${coche.potencia} CV</p>
+                <h3>⭐ Índice Montero</h3>
 
-            <p><strong>Combustible:</strong> ${coche.combustible}</p>
+                <p>${indice}/100</p>
 
-            <p><strong>Año:</strong> ${coche.anio}</p>
+                <p>${nivel}</p>
 
-            <p><strong>Km:</strong> ${coche.km.toLocaleString("es-ES")} km</p>
+                <hr>
 
-            <p><strong>Cambio:</strong> ${coche.cambio}</p>
+                <h3>💶 Mercado</h3>
 
-            <p><strong>Color:</strong> ${coche.color}</p>
+                <p>Valor mercado: ${mercado.valor.toLocaleString("es-ES")} €</p>
 
-            <p><strong>País:</strong> ${coche.pais}</p>
+                <p>Ahorro: ${mercado.ahorro.toLocaleString("es-ES")} €</p>
 
-            <p><strong>Precio:</strong> ${coche.precio.toLocaleString("es-ES")} €</p>
+                <p>${mercado.estado}</p>
 
-            <hr>
+                <hr>
 
-            <h3>⭐ Índice Montero</h3>
+                <h3>🤖 MonteroAI</h3>
 
-            <h2>${indice}/100</h2>
+                <p>${analisis}</p>
 
-            <p>${nivel}</p>
+                <button onclick="buscarCoche()">
 
-            <hr>
+                    ⬅ Volver
 
-            <h3>💶 Mercado</h3>
+                </button>
 
-            <p><strong>Valor:</strong> ${mercado.valor.toLocaleString("es-ES")} €</p>
+            </div>
 
-            <p><strong>Ahorro:</strong> ${mercado.ahorro.toLocaleString("es-ES")} €</p>
+            `;
 
-            <p>${mercado.estado}</p>
+        }catch(error){
 
-            <hr>
+            resultado.innerHTML = `
 
-            <h3>🤖 MonteroAI</h3>
+            <div class="card ficha">
 
-            <p>${analisis}</p>
+                <h2>❌ ERROR DETECTADO</h2>
 
-            <button onclick="buscarCoche()">
+                <p><strong>Mensaje:</strong></p>
 
-                ⬅ Volver
+                <pre style="color:red;white-space:pre-wrap;">
+${error.message}
+                </pre>
 
-            </button>
+                <p><strong>Stack:</strong></p>
 
-        </div>
+                <pre style="font-size:12px;white-space:pre-wrap;">
+${error.stack}
+                </pre>
 
-        `;
+                <button onclick="buscarCoche()">
+
+                    ⬅ Volver
+
+                </button>
+
+            </div>
+
+            `;
+
+            console.error(error);
+
+        }
 
     }
 
